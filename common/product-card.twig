@@ -1,0 +1,23 @@
+<div class="box">
+    <a href="/products/{{ product.slug }}">
+        <div class="img-box">
+            <img src="{{ product.images[0].image.small }}" alt="">
+        </div>
+        <div class="detail-box">
+            <h6>
+                {{ product.name }}
+            </h6>
+            <h6>
+                Price
+                <span>
+                    {{ product.formatted_price }}
+                  </span>
+            </h6>
+        </div>
+        <div class="new">
+                <span>
+                  New
+                </span>
+        </div>
+    </a>
+</div>

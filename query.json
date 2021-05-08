@@ -1,0 +1,20 @@
+{
+  "recent_products" : true,
+  "featured_products" : [
+    "f35583ab-f7e0-4a9e-8f35-b9ea99a6b6c1",
+    "c2e58da2-e42a-4bea-af82-9f693254e268"
+  ],
+  "sale_products" : true,
+  "featured_categories" : [
+    "67066",
+    "1143",
+    "1144",
+    "1145"
+  ],
+  "featured_categories_products" : [
+    "1142",
+    "1143",
+    "1144",
+    "1145"
+  ]
+}

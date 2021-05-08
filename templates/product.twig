@@ -1,0 +1,133 @@
+{% extends "layout.twig" %}
+
+{% block title %} Home page {% endblock %}
+
+{% block header %} {{ include('header.twig') }} {% endblock %}
+
+{% block main_content %}
+    <div class="hero_area">
+        <section class="shop_section layout_padding ">
+            <div class="container">
+                <div class="row mar-top-md">
+
+                        <div  class="col-md-6 visible-xs visible-sm">
+                            <div>
+                                <img src="{{ product.images[0].image.full_size }}"
+                                     class="product-view-img product-view-img-small" alt="{{ image.alt_text }}">
+                            </div>
+                        </div>
+
+
+
+
+                    <div class="col-md-6">
+
+                        <div class="product-info text-center">
+                            <h1 class="h2 space-bottom-half product-title">{{product.name}}</h1>
+
+
+                            <h2 style="display: inline-block;">
+                                <span id="product-old-price" class="old">{{productTotal.formatted_price}}</span>
+                            </h2>
+
+
+
+
+                            <div class="product-meta">
+
+
+                                <div v-if="selectedProduct.sku" class="product-sku" style="">
+                                    <strong>{{ locals.product_sku }}: </strong>
+                                    <span>{{product.sku}}</span>
+                                </div>
+                                <br/>
+
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    small descriptioin
+                                </span>
+                                <br/>
+                                <a href="#description-options-section" id="product-description-trigger">  {{ locals.product_readmore }} </a>
+
+                               <div class="wrap-button-add-to-cart">
+                                   <button class="btn btn-primary" onclick="productAddToCart('{{ product.id }}',1)">
+                                       {{ locals.add_to_cart }}
+                                       <img class="add-to-cart-progress d-none" src="{{ asset_url ~ 'spinner.gif' }}" width="30" height="30"/>
+                                   </button>
+                               </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="product-share">
+                                <span>{{ locals.product_share }}</span><br/>
+                                <div class="social-bar">
+                                    <a id="product-view-social-media-facebook"
+                                       href="#" class="sb-facebook" data-toggle="tooltip"
+                                       target="_blank"
+                                       data-placement="top" title="Facebook">
+                                        <i class="icon-facebook-f social-icon"></i>
+                                    </a>
+                                    <a id="product-view-social-media-twitter"
+                                       href="#" class="sb-twitter"
+                                       target="_blank"
+                                       data-toggle="tooltip" data-placement="top" title="Twitter">
+                                        <i class="icon-twitter social-icon"></i>
+                                    </a>
+                                    <a id="product-view-social-media-pinterest"
+                                       href="#" class="sb-pinterest" data-pin-do="buttonPin"
+                                       target="_blank"
+                                       data-pin-custom="true" data-toggle="tooltip" data-placement="top" title=""
+                                       data-original-title="Pinterest">
+                                        <i class="icon-pinterest social-icon"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                        </div><!-- .product-info -->
+                    </div>
+
+                </div>
+            </div><!-- .container -->
+        </section>
+        <section
+                v-if="product.has_variants ||  product.description || is_reviews_allowed"
+                class="container padding-top-2x padding-bottom-3x" id="description-options-section">
+
+
+            <ul class="nav nav-tabs nav-tabs-desc">
+
+                <li >
+                    <a class="active" data-toggle="pill" href="#description-tab"
+                       id="description-tab-trigger">{{ locals.product_description }}</a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content">
+
+
+                <div id="description-tab" role="tabpanel" class="tab-pane active product-article test-4">
+                    {{ product.description | raw | striptags}}
+                </div>
+
+
+
+
+            </div>
+
+
+        </section>
+    </div>
+{% endblock %}
+
+{% block footer %} {{ include('footer.twig') }} {% endblock %}
+

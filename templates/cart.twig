@@ -1,0 +1,11 @@
+{% extends "layout.twig" %}
+
+{% block title %} Home page {% endblock %}
+
+{% block header %} {{ include('header.twig') }} {% endblock %}
+
+{% block main_content %}
+    {{ cart_template_content | raw }}
+{% endblock %}
+
+{% block footer %} {{ include('footer.twig') }} {% endblock %}

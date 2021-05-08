@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="{{ session.lang.code }}" dir="{% if session.lang.code == 'ar' %}rtl{% else %}ltr{% endif %}">
+
+<!-- index28:48-->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="{{ store.description }}" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{{ asset_url ~ 'favicon.png' }}" type="image/x-icon">
+
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    <style>
+        :root {
+            --asset-url: {{ asset_url }};
+        }
+    </style>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+
+    {% if session.lang.code == 'ar' %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url ~ 'bootstrap-rtl.css' }}" />
+    {% else %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url ~ 'bootstrap.css' }}" />
+    {% endif %}
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset_url ~ 'bootstrap.css' }}" />
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset_url ~ 'style.css' }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{{ asset_url ~ 'responsive.css' }}" rel="stylesheet" />
+
+    {% if session.lang.code == 'ar' %}
+        <link href="{{ asset_url ~ 'style-ar.css' }}" rel="stylesheet" />
+    {% endif %}
+
+</head>
+
+<body>
+
+    {% block header %}{% endblock %}
+    {% block main_content %}{% endblock %}
+    {% block footer %}{% endblock %}
+
+    {{ zidapi_script|raw }}
+<script src="{{ asset_url ~ 'jquery-3.4.1.min.js' }}"></script>
+<script src="{{ asset_url ~ 'bootstrap.js' }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<script src="{{ asset_url ~ 'custom.js' }}"></script>
+
+</body >
+
+</html>

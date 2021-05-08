@@ -1,0 +1,23 @@
+{% extends "layout.twig" %}
+
+{% block title %} Not found {% endblock %}
+
+{% block header %} {{ include('header.twig') }} {% endblock %}
+
+
+{% block main_content %}
+
+<div class="hero_area">
+    <section class="shop_section layout_padding">
+        <div class="container">
+            <h1>{{ locals.page_not_found }}</h1>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %} {{ include('footer.twig') }} {% endblock %}

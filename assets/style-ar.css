@@ -1,0 +1,35 @@
+.product-article {
+    text-align: right;
+}
+.hero_area {
+    margin-bottom: 60px;
+}
+
+.slider_section {
+    text-align: right;
+}
+
+.saving_section .detail-box * {
+    text-align: right;
+}
+
+.detail-box {
+    text-align: right;
+}
+
+
+.contact_section  {
+    text-align: right;
+}
+
+.client_info * , client_name * {
+    text-align: right;
+}
+
+.info_container {
+    text-align: right;
+}
+
+.client_section .box p {
+    text-align: right;
+}
